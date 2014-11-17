@@ -11,7 +11,7 @@ Here's a <a href="http://nelsoncash.github.io/angular-ripple">demo</a>
 
 # Bower
 
-    $ bower install --save angular-ripple
+    bower install --save angular-ripple
 
 
 # Usage
