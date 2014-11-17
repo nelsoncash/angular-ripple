@@ -28,6 +28,29 @@ Then add the `angular-ripple` attribute to elements
 
     <button angular-ripple>Ripple!</button>
 
+Add some styles to the ripple
+
+    [angular-ripple] {
+      position: relative;
+      overflow: hidden;
+    }
+    .angular-ripple {
+      display: block;
+      position: absolute;
+      background-color: rgba(0,0,0,0.1);
+      border-radius: 50%;
+      transform: scale(0);
+    }
+    .angular-ripple.animate {
+      animation: ripple 0.35s linear;
+    }
+    @keyframes ripple {
+      100% {
+        opacity: 0;
+        transform: scale(2.5);
+      }
+    }
+
 
 # License
 The MIT License
