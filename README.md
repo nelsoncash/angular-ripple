@@ -7,7 +7,7 @@ A pure javascript (no polymer, no jQuery) AngularJS directive that adds a Google
 
 # Demo
 
-Here's a <a href="">demo</a>
+Here's a <a href="http://nelsoncash.github.io/angular-ripple">demo</a>
 
 # Bower
 
@@ -19,11 +19,11 @@ Here's a <a href="">demo</a>
 Include the script in your HTML
 
     <script type="text/javascript" src="bower_components/ngRipple/ngRipple.js"></script>
-    
+
 Then include `ngRipple` in your module dependencies
 
     angular.module('yourApp', ['ngRipple']);
-    
+
 Then add the `ng-ripple` attribute to elements
 
     <button ng-ripple>Ripple!</button>
