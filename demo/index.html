@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+  <head>
+    <meta charset="utf-8" />
+    <title>angular-ripple Demo</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <style>
+
+      [angular-ripple] {
+        position: relative;
+        overflow: hidden;
+        border: none;
+        background: none;
+      }
+      .angular-ripple {
+        display: block;
+        position: absolute;
+        background-color: rgba(0,0,0,0.1);
+        border-radius: 50%;
+        transform: scale(0);
+      }
+      .angular-ripple.animate {
+        animation: ripple 0.35s linear;
+      }
+      @keyframes ripple {
+        100% {
+          opacity: 0;
+          transform: scale(2.5);
+        }
+      }
+
+
+      /*demo styles*/
+      body {
+        font-family: Helvetica Neue;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+      }
+      .btn {
+        -webkit-user-select: none;
+        cursor: pointer;
+        display: inline-block;
+        padding: 3em 5em;
+        margin: 10em auto;
+        border-radius: 2px;
+        background-color: salmon;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>angular-ripple</h1>
+
+    <div class="btn" angular-ripple>Touch Me Squeeze Me</div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script>
+      angular.module('demo', ['angularRipple']);
+    </script>
+    <script src="../angular-ripple.js"></script>
+  </body>
+</html>
