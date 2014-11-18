@@ -12,7 +12,7 @@ Here's a <a href="http://nelsoncash.github.io/angular-ripple">demo</a>
 # Bower
 
   ```bash
-    bower install --save angular-ripple
+  bower install --save angular-ripple
   ```
 
 
@@ -21,44 +21,44 @@ Here's a <a href="http://nelsoncash.github.io/angular-ripple">demo</a>
 Include the script in your HTML
 
   ```html
-    <script type="text/javascript" src="bower_components/angular-ripple/angular-ripple.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ripple/angular-ripple.js"></script>
   ```
 
 Then include `angularRipple` in your module dependencies
 
   ```js
-    angular.module('yourApp', ['angularRipple']);
+  angular.module('yourApp', ['angularRipple']);
   ```
 
 Then add the `angular-ripple` attribute to elements
 
   ```html
-    <button angular-ripple>Ripple!</button>
+  <button angular-ripple>Ripple!</button>
   ```
 
 Add some styles to the ripple
 
   ```css
-    [angular-ripple] {
-      position: relative;
-      overflow: hidden;
+  [angular-ripple] {
+    position: relative;
+    overflow: hidden;
+  }
+  .angular-ripple {
+    display: block;
+    position: absolute;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    transform: scale(0);
+  }
+  .angular-ripple.animate {
+    animation: ripple 0.35s linear;
+  }
+  @keyframes ripple {
+    100% {
+      opacity: 0;
+      transform: scale(2.5);
     }
-    .angular-ripple {
-      display: block;
-      position: absolute;
-      background-color: rgba(0,0,0,0.1);
-      border-radius: 50%;
-      transform: scale(0);
-    }
-    .angular-ripple.animate {
-      animation: ripple 0.35s linear;
-    }
-    @keyframes ripple {
-      100% {
-        opacity: 0;
-        transform: scale(2.5);
-      }
-    }
+  }
   ```
 
 # License
