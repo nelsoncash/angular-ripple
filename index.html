@@ -20,7 +20,21 @@
         transform: scale(0);
       }
       .angular-ripple.animate {
+        -webkit-animation: ripple 0.35s linear;
+        -moz-animation: ripple 0.35s linear;
         animation: ripple 0.35s linear;
+      }
+      @-webkit-keyframes ripple {
+        100% {
+          opacity: 0;
+          -webkit-transform: scale(2.5);
+        }
+      }
+      @-moz-keyframes ripple {
+        100% {
+          opacity: 0;
+          -moz-transform: scale(2.5);
+        }
       }
       @keyframes ripple {
         100% {
