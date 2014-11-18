@@ -11,25 +11,34 @@ Here's a <a href="http://nelsoncash.github.io/angular-ripple">demo</a>
 
 # Bower
 
+  ```bash
     bower install --save angular-ripple
+  ```
 
 
 # Usage
 
 Include the script in your HTML
 
+  ```html
     <script type="text/javascript" src="bower_components/angular-ripple/angular-ripple.js"></script>
+  ```
 
 Then include `angularRipple` in your module dependencies
 
+  ```js
     angular.module('yourApp', ['angularRipple']);
+  ```
 
 Then add the `angular-ripple` attribute to elements
 
+  ```html
     <button angular-ripple>Ripple!</button>
+  ```
 
 Add some styles to the ripple
 
+  ```css
     [angular-ripple] {
       position: relative;
       overflow: hidden;
@@ -50,7 +59,7 @@ Add some styles to the ripple
         transform: scale(2.5);
       }
     }
-
+  ```
 
 # License
 The MIT License
