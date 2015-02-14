@@ -87,6 +87,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - Ripple position calculation, based on antoinepairet's [fork](https://github.com/b12consulting/angular-ripple)
 - Added moz & webkit prefixes to demo page's CSS.
 
+## 0.0.2 - 02/14/2014
+### Fixed
+- Changed ripple position calculation from getClientBoundingRect() to getPos() to be much more accurate.
+
 # Credits
 
 Big props to [this demo](http://codepen.io/fronterweb/pen/jcwgx)<br />
