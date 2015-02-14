@@ -5,6 +5,8 @@ A pure javascript (no polymer, no jQuery) AngularJS directive that adds a Google
 
 [Angular Material](https://material.angularjs.org/) is cool, but sometimes you just want the ripple effect in your angular app without all the bloat. That’s why we made this.
 
+Ain't nobody f*ckin' with my [Clique](https://www.youtube.com/watch?v=FOrLNHbEzMg)
+
 # Demo
 
 Here's a <a href="http://nelsoncash.github.io/angular-ripple">demo</a>
@@ -74,7 +76,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # Contributors
 
-* Mike McMillan ([@MikeMcChillin](http://twitter.com/mikemcchillin))
+- Mike McMillan ([@MikeMcChillin](http://twitter.com/mikemcchillin))
+
+# Changelog
+## 0.0.1 - 02/14/2014
+### Added
+- This CHANGELOG file to hopefully serve as an evolving example of a standardized open source project CHANGELOG.
+
+### Fixed
+- Ripple position calculation, based on antoinepairet's [fork](https://github.com/b12consulting/angular-ripple)
+- Added moz & webkit prefixes to demo page's CSS.
 
 # Credits
 

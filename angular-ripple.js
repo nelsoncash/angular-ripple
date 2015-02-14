@@ -1,5 +1,5 @@
 /*!
- * angular-ripple.js v0.0.0 - A standalone AngularJS implementation of the Google Material Design ripple effect.
+ * angular-ripple.js v0.0.1 - A standalone AngularJS implementation of the Google Material Design ripple effect.
  * Copyright (c) 2014 Nelson Cash - http://github.com/nelsoncash/angular-ripple
  * http://codepen.io/MikeMcChillin/pen/XJrLwg
  * License: MIT
@@ -18,7 +18,7 @@
     return {
       restrict: 'A',
       link: function (scope, element, attrs) {
-        var x, y;
+        var x, y, size, offsets;
 
         element.on('click touchstart', function(e) {
           var ripple = this.querySelector('.angular-ripple');
@@ -34,7 +34,7 @@
 
             // Set ripple size
             if (!ripple.offsetHeight && !ripple.offsetWidth) {
-              var size = Math.max(e.target.offsetWidth, e.target.offsetHeight);
+              size = Math.max(element[0].offsetWidth, element[0].offsetHeight);
               ripple.style.width = size + 'px';
               ripple.style.height = size + 'px';
             }
@@ -51,12 +51,11 @@
             x = e.changedTouches[0].pageX;
             y = e.changedTouches[0].pageY;
           }
-          x = x - this.offsetLeft - ripple.offsetWidth / 2;
-          y = y - this.offsetTop - ripple.offsetHeight / 2;
 
           // set new ripple position by click or touch position
-          ripple.style.top = y + 'px';
-          ripple.style.left = x + 'px';
+          offsets = element[0].getBoundingClientRect();
+          ripple.style.left = (x - offsets.left - size / 2) + 'px';
+          ripple.style.top = (y - offsets.top - size / 2) + 'px';
 
           // Add animation effect
           ripple.classList.add('animate');

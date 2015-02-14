@@ -17,17 +17,40 @@
         position: absolute;
         background-color: rgba(0,0,0,0.1);
         border-radius: 50%;
+        -moz-transform: scale(0);
+        -webkit-transform: scale(0);
         transform: scale(0);
       }
       .angular-ripple.animate {
+        -moz-animation: ripple 0.35s linear;
+        -webkit-animation: ripple 0.35s linear;
         animation: ripple 0.35s linear;
+      }
+      @-moz-keyframes ripple {
+        100% {
+          opacity: 0;
+          -moz-transform: scale(2.5);
+          -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+        }
+      }
+      @-webkit-keyframes ripple {
+        100% {
+          opacity: 0;
+          -moz-transform: scale(2.5);
+          -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+        }
       }
       @keyframes ripple {
         100% {
           opacity: 0;
+          -moz-transform: scale(2.5);
+          -webkit-transform: scale(2.5);
           transform: scale(2.5);
         }
       }
+
 
 
       /*demo styles*/
@@ -46,10 +69,14 @@
         background-color: salmon;
         color: white;
       }
+      a, a:visited {
+        color: #444;
+      }
     </style>
   </head>
   <body>
-    <h1>angular-ripple</h1>
+    <h1><a href="https://github.com/nelsoncash/angular-ripple">angular-ripple demo</a></h1>
+    <p>Built by <a href="http://nelsoncash.com" target="_blank">Nelson Cash</a><p>
 
     <div class="btn" angular-ripple>Touch Me Squeeze Me</div>
 
