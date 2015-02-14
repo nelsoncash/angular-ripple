@@ -81,7 +81,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 # Changelog
 ## 0.0.1 - 02/14/2014
 ### Added
-- This CHANGELOG file to hopefully serve as an evolving example of a standardized open source project CHANGELOG.
+- This changelog
 
 ### Fixed
 - Ripple position calculation, based on antoinepairet's [fork](https://github.com/b12consulting/angular-ripple)

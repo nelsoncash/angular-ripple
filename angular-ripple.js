@@ -53,7 +53,11 @@
           }
 
           // set new ripple position by click or touch position
-          offsets = element[0].getBoundingClientRect();
+          function getPos(el) {
+            for (var lx=0, ly=0; el != null; lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent);
+            return {left: lx, top: ly};
+          };
+          offsets = getPos(element[0]);
           ripple.style.left = (x - offsets.left - size / 2) + 'px';
           ripple.style.top = (y - offsets.top - size / 2) + 'px';
 
