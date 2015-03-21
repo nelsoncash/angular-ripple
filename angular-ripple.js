@@ -1,5 +1,5 @@
 /*!
- * angular-ripple.js v0.0.0 - A standalone AngularJS implementation of the Google Material Design ripple effect.
+ * angular-ripple.js v0.0.3 - A standalone AngularJS implementation of the Google Material Design ripple effect.
  * Copyright (c) 2014 Nelson Cash - http://github.com/nelsoncash/angular-ripple
  * http://codepen.io/MikeMcChillin/pen/XJrLwg
  * License: MIT
@@ -18,7 +18,7 @@
     return {
       restrict: 'A',
       link: function (scope, element, attrs) {
-        var x, y;
+        var x, y, size, offsets;
 
         element.on('click touchstart', function(e) {
           var ripple = this.querySelector('.angular-ripple');
@@ -34,7 +34,7 @@
 
             // Set ripple size
             if (!ripple.offsetHeight && !ripple.offsetWidth) {
-              var size = Math.max(e.target.offsetWidth, e.target.offsetHeight);
+              size = Math.max(element[0].offsetWidth, element[0].offsetHeight);
               ripple.style.width = size + 'px';
               ripple.style.height = size + 'px';
             }
@@ -51,12 +51,19 @@
             x = e.changedTouches[0].pageX;
             y = e.changedTouches[0].pageY;
           }
-          x = x - this.offsetLeft - ripple.offsetWidth / 2;
-          y = y - this.offsetTop - ripple.offsetHeight / 2;
 
           // set new ripple position by click or touch position
-          ripple.style.top = y + 'px';
-          ripple.style.left = x + 'px';
+          function getPos(element) {
+            var de = document.documentElement;
+            var box = element.getBoundingClientRect();
+            var top = box.top + window.pageYOffset - de.clientTop;
+            var left = box.left + window.pageXOffset - de.clientLeft;
+            return { top: top, left: left };
+          }
+
+          offsets = getPos(element[0]);
+          ripple.style.left = (x - offsets.left - size / 2) + 'px';
+          ripple.style.top = (y - offsets.top - size / 2) + 'px';
 
           // Add animation effect
           ripple.classList.add('animate');
@@ -66,4 +73,3 @@
     };
   });
 })(window, window.angular);
-
