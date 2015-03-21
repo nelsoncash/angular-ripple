@@ -79,7 +79,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - Mike McMillan ([@MikeMcChillin](http://twitter.com/mikemcchillin))
 
 # Changelog
-## 0.0.1 - 02/14/2014
+## 0.0.3 - 03/21/2015
+### Fixed
+- Changed ripple position calculation to work with scrolling divs, using [this method](http://stackoverflow.com/a/28857255). Closes out [GH issue #1](https://github.com/nelsoncash/angular-ripple/issues/1). 
+
+## 0.0.2 - 02/14/2015
+### Fixed
+- Changed ripple position calculation from getClientBoundingRect() to getPos() to be much more accurate.
+
+## 0.0.1 - 02/14/2015
 ### Added
 - This changelog
 
@@ -87,9 +95,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - Ripple position calculation, based on antoinepairet's [fork](https://github.com/b12consulting/angular-ripple)
 - Added moz & webkit prefixes to demo page's CSS.
 
-## 0.0.2 - 02/14/2014
-### Fixed
-- Changed ripple position calculation from getClientBoundingRect() to getPos() to be much more accurate.
+
 
 # Credits
 

@@ -1,5 +1,5 @@
 /*!
- * angular-ripple.js v0.0.1 - A standalone AngularJS implementation of the Google Material Design ripple effect.
+ * angular-ripple.js v0.0.3 - A standalone AngularJS implementation of the Google Material Design ripple effect.
  * Copyright (c) 2014 Nelson Cash - http://github.com/nelsoncash/angular-ripple
  * http://codepen.io/MikeMcChillin/pen/XJrLwg
  * License: MIT
@@ -53,10 +53,14 @@
           }
 
           // set new ripple position by click or touch position
-          function getPos(el) {
-            for (var lx=0, ly=0; el != null; lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent);
-            return {left: lx, top: ly};
-          };
+          function getPos(element) {
+            var de = document.documentElement;
+            var box = element.getBoundingClientRect();
+            var top = box.top + window.pageYOffset - de.clientTop;
+            var left = box.left + window.pageXOffset - de.clientLeft;
+            return { top: top, left: left };
+          }
+
           offsets = getPos(element[0]);
           ripple.style.left = (x - offsets.left - size / 2) + 'px';
           ripple.style.top = (y - offsets.top - size / 2) + 'px';
@@ -69,4 +73,3 @@
     };
   });
 })(window, window.angular);
-
