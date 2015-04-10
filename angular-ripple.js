@@ -27,7 +27,7 @@
           if (ripple === null) {
             // Create ripple
             ripple = document.createElement('span');
-            ripple.classList.add('angular-ripple');
+            ripple.className += ' angular-ripple';
 
             // Prepend ripple to element
             this.insertBefore(ripple, this.firstChild);
@@ -41,7 +41,7 @@
           }
 
           // Remove animation effect
-          ripple.classList.remove('animate');
+          ripple.className.replace('animate', '');
 
           // get click coordinates by event type
           if (eventType === 'click') {
@@ -66,7 +66,7 @@
           ripple.style.top = (y - offsets.top - size / 2) + 'px';
 
           // Add animation effect
-          ripple.classList.add('animate');
+          ripple.className += ' animate';
 
         });
       }
