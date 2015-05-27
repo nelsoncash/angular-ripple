@@ -40,7 +40,7 @@ Then add the `angular-ripple` attribute to elements
   <button angular-ripple>Ripple!</button>
   ```
 
-Add some styles to the ripple
+Add some styles to the ripple (remember to include browser specific prefixes)
 
   ```css
   [angular-ripple] {
