@@ -81,6 +81,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - Mike McMillan ([@MikeMcChillin](http://twitter.com/mikemcchillin))
 
 # Changelog
+## 0.0.4 - 05/28/2015
+- Added scope.$on('$destroy')
+
 ## 0.0.3 - 03/21/2015
 ### Fixed
 - Changed ripple position calculation to work with scrolling divs, using [this method](http://stackoverflow.com/a/28857255). Closes out [GH issue #1](https://github.com/nelsoncash/angular-ripple/issues/1). 

@@ -55,7 +55,7 @@
 
       /*demo styles*/
       body {
-        font-family: Helvetica Neue;
+        font-family: 'Neue Haas Grotesk Text Pro', comic sans ms, Helvetica Neue;
         text-align: center;
         -webkit-font-smoothing: antialiased;
       }
@@ -63,11 +63,15 @@
         -webkit-user-select: none;
         cursor: pointer;
         display: inline-block;
-        padding: 3em 5em;
+        padding: 2em 4em;
         /*margin: 10em auto;*/
         border-radius: 2px;
-        background-color: salmon;
-        color: white;
+        background-color: aquamarine;
+        /*color: white;*/
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.02em;
+        color: rgba(0,0,0.5);
       }
       a, a:visited {
         color: #444;
@@ -75,23 +79,23 @@
     </style>
   </head>
   <body>
-    <h1><a href="https://github.com/nelsoncash/angular-ripple">angular-ripple demo</a></h1>
-    <p>Built by <a href="http://nelsoncash.com" target="_blank">Nelson Cash</a><p>
+    <h1 style="margin-top: 3em;"><a href="https://github.com/nelsoncash/angular-ripple">angular-ripple demo</a></h1>
+    <p style="margin-bottom: 3em;">Built by <a href="http://nelsoncash.com" target="_blank">Nelson Cash</a><p>
 
-    <div class="btn" angular-ripple>Touch Me Squeeze Me</div>
+    <div class="btn" angular-ripple>Click me</div>
 
 
-    <p style="margin-top: 3em;">Scrolling div</p>
-    <div style="height: 300px; border: 3px solid cyan; width: 400px; overflow: scroll; margin: 0 auto;">
+    <p style="margin-top: 5em;">Scrolling div</p>
+    <div style="height: 300px; border: 3px solid rgba(0,0,0,0.1); width: 400px; overflow: scroll; margin: 0 auto;">
       <ul style="list-style: none; margin: 0; padding: 0;">
-        <li><div class="btn" angular-ripple>Touch Me Squeeze Me</div></li>
-        <li><div class="btn" angular-ripple>Touch Me Squeeze Me</div></li>
-        <li><div class="btn" angular-ripple>Touch Me Squeeze Me</div></li>
-        <li><div class="btn" angular-ripple>Touch Me Squeeze Me</div></li>
-        <li><div class="btn" angular-ripple>Touch Me Squeeze Me</div></li>
-        <li><div class="btn" angular-ripple>Touch Me Squeeze Me</div></li>
-        <li><div class="btn" angular-ripple>Touch Me Squeeze Me</div></li>
-        <li><div class="btn" angular-ripple>Touch Me Squeeze Me</div></li>
+        <li><div class="btn" angular-ripple>Click me</div></li>
+        <li><div class="btn" angular-ripple>Click me</div></li>
+        <li><div class="btn" angular-ripple>Click me</div></li>
+        <li><div class="btn" angular-ripple>Click me</div></li>
+        <li><div class="btn" angular-ripple>Click me</div></li>
+        <li><div class="btn" angular-ripple>Click me</div></li>
+        <li><div class="btn" angular-ripple>Click me</div></li>
+        <li><div class="btn" angular-ripple>Click me</div></li>
       </ul>
     </div>
 
