@@ -1,5 +1,5 @@
 /*!
- * angular-ripple.js v0.0.4 - A standalone AngularJS implementation of the Google Material Design ripple effect.
+ * angular-ripple.js v0.0.5 - A standalone AngularJS implementation of the Google Material Design ripple effect.
  * Copyright (c) 2014 Nelson Cash - http://github.com/nelsoncash/angular-ripple
  * http://codepen.io/MikeMcChillin/pen/XJrLwg
  * License: MIT
@@ -26,7 +26,7 @@
             if (ripple === null) {
               // Create ripple
               ripple = document.createElement('span');
-              ripple.classList.add('angular-ripple');
+              ripple.className += ' angular-ripple';
   
               // Prepend ripple to element
               this.insertBefore(ripple, this.firstChild);
@@ -40,15 +40,29 @@
             }
   
             // Remove animation effect
-            ripple.classList.remove('animate');
+            ripple.className = ripple.className.replace(/ ?(animate)/g, '');
   
             // get click coordinates by event type
-            if (eventType === 'click') {
+            if (eventType === 'mouseup') {
               x = e.pageX;
               y = e.pageY;
-            } else if(eventType === 'touchstart') {
-              x = e.changedTouches[0].pageX;
-              y = e.changedTouches[0].pageY;
+            } else if (eventType === 'touchend') {
+              try {
+                var origEvent;
+
+                if (typeof e.changedTouches !== 'undefined') {
+                  origEvent = e.changedTouches[0];
+                } else {
+                  origEvent = e.originalEvent;
+                }
+
+                x = origEvent.pageX;
+                y = origEvent.pageY;
+              } catch (e) {
+                // fall back to center of el
+                x = ripple.offsetWidth / 2;
+                y = ripple.offsetHeight / 2;
+              }
             }
   
             // set new ripple position by click or touch position
@@ -65,15 +79,14 @@
             ripple.style.top = (y - offsets.top - size / 2) + 'px';
   
             // Add animation effect
-            ripple.classList.add('animate');          
-            
+            ripple.className += ' animate';          
           }
 
-        element.on('click touchstart', func);
+        element.on('touchend mouseup', func);
     
         //remove the event listener on scope destroy
         scope.$on('$destroy',function() {
-          element.off('click touchstart', func);
+          element.off('touchend mouseup', func);
         });
       }
     };
