@@ -79,8 +79,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 # Contributors
 
 - Mike McMillan ([@MikeMcChillin](http://twitter.com/mikemcchillin))
+- Matthew Frey ([mmmeff](https://github.com/mmmeff))
 
 # Changelog
+## 0.0.5 - 06/26/2015
+- Merged in @mmmeff's (commit)[https://github.com/mmmeff/angular-ripple/commit/5173af8e84302e56223edab492973aba3d0855d7] to fix degredation and event handling 
+
 ## 0.0.4 - 05/28/2015
 - Added scope.$on('$destroy')
 
