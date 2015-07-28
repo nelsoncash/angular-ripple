@@ -48,12 +48,10 @@
               y = e.pageY;
             } else if (eventType === 'touchend') {
               try {
-                var origEvent;
+                var origEvent = e.originalEvent || e;
 
-                if (typeof e.changedTouches !== 'undefined') {
-                  origEvent = e.changedTouches[0];
-                } else {
-                  origEvent = e.originalEvent;
+                if (typeof origEvent.changedTouches !== 'undefined') {
+                  origEvent = origEvent.changedTouches[0];
                 }
 
                 x = origEvent.pageX;
