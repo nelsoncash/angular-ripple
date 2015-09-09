@@ -15,6 +15,10 @@
   var rip = angular.module('angularRipple', []);
 
   rip.directive('angularRipple', function() {
+    var isIOS = ((/iphone|ipad/gi).test(navigator.appVersion));
+    var myDown = isIOS ? 'touchstart' : 'mousedown';
+    var myUp = isIOS ? 'touchend' : 'mouseup';
+    
     return {
       restrict: 'A',
       link: function (scope, element, attrs) {
@@ -82,7 +86,7 @@
             ripple.className += ' animate';          
           }
 
-        element.on('touchend mouseup', func);
+        element.on(myUp, func);
     
         //remove the event listener on scope destroy
         scope.$on('$destroy',function() {
