@@ -16,7 +16,6 @@
 
   rip.directive('angularRipple', function() {
     var isIOS = ((/iphone|ipad/gi).test(navigator.appVersion));
-    var myDown = isIOS ? 'touchstart' : 'mousedown';
     var myUp = isIOS ? 'touchend' : 'mouseup';
     
     return {
@@ -90,7 +89,7 @@
     
         //remove the event listener on scope destroy
         scope.$on('$destroy',function() {
-          element.off('touchend mouseup', func);
+          element.off(myUp, func);
         });
       }
     };
