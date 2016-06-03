@@ -1,5 +1,5 @@
 /*!
- * angular-ripple.js v0.0.6 - A standalone AngularJS implementation of the Google Material Design ripple effect.
+ * angular-ripple.js v0.0.7 - A standalone AngularJS implementation of the Google Material Design ripple effect.
  * Copyright (c) 2014 Nelson Cash - http://github.com/nelsoncash/angular-ripple
  * http://codepen.io/MikeMcChillin/pen/XJrLwg
  * License: MIT
@@ -43,10 +43,10 @@
             ripple.className = ripple.className.replace(/ ?(animate)/g, '');
 
             // get click coordinates by event type
-            if (eventType === 'mouseup') {
+            if (eventType === 'mousedown') {
               x = e.pageX;
               y = e.pageY;
-            } else if (eventType === 'touchend') {
+            } else if (eventType === 'touchstart') {
               try {
                 var origEvent;
 
@@ -82,7 +82,7 @@
             ripple.className += ' animate';
           }
 
-        var eventType = ('ontouchend' in document) ? 'touchend' : 'mouseup';
+        var eventType = ('ontouchstart' in document) ? 'touchstart' : 'mousedown';
         element.on(eventType, func);
 
         //remove the event listener on scope destroy
