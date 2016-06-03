@@ -83,6 +83,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - [storuky](https://github.com/storuky)
 
 # Changelog
+## 0.0.7 - 06/03/2016
+- Fixed [GH Issue #13](https://github.com/nelsoncash/angular-ripple/issues/13), which changes mouseup to mousedown and touchend to touchstart.
+
 ## 0.0.6 - 06/03/2016
 - Merged in @storuky's [commit](https://github.com/nelsoncash/angular-ripple/pull/8/commits/36dbc9e8ffc6550bbc6c145076b4f78d86ac0b12) to fix double event call on iOS.
 
