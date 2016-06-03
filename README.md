@@ -80,8 +80,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 - Mike McMillan ([@MikeMcChillin](http://twitter.com/mikemcchillin))
 - Matthew Frey ([mmmeff](https://github.com/mmmeff))
+- [storuky](https://github.com/storuky)
 
 # Changelog
+## 0.0.6 - 06/03/2016
+- Merged in @storuky's [commit](https://github.com/nelsoncash/angular-ripple/pull/8/commits/36dbc9e8ffc6550bbc6c145076b4f78d86ac0b12) to fix double event call on iOS.
+
 ## 0.0.5 - 06/26/2015
 - Merged in @mmmeff's [commit](https://github.com/mmmeff/angular-ripple/commit/5173af8e84302e56223edab492973aba3d0855d7) to fix degredation and event handling 
 

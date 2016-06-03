@@ -1,5 +1,5 @@
 /*!
- * angular-ripple.js v0.0.5 - A standalone AngularJS implementation of the Google Material Design ripple effect.
+ * angular-ripple.js v0.0.6 - A standalone AngularJS implementation of the Google Material Design ripple effect.
  * Copyright (c) 2014 Nelson Cash - http://github.com/nelsoncash/angular-ripple
  * http://codepen.io/MikeMcChillin/pen/XJrLwg
  * License: MIT
@@ -82,11 +82,12 @@
             ripple.className += ' animate';
           }
 
-        element.on('touchend mouseup', func);
+        var eventType = ('ontouchend' in document) ? 'touchend' : 'mouseup';
+        element.on(eventType, func);
 
         //remove the event listener on scope destroy
         scope.$on('$destroy',function() {
-          element.off('touchend mouseup', func);
+          element.off(eventType, func);
         });
       }
     };

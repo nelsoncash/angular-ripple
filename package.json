@@ -1,7 +1,7 @@
 {
   "name": "ngRipple",
   "description": "A standalone Angular implementation of the Google Material Design ripple effect.",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "author": "Nelson Cash",
   "homepage": "https://github.com/nelsoncash/ngRipple",
   "bugs": "https://github.com/nelsoncash/ngRipple/issues",
