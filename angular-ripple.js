@@ -80,23 +80,18 @@
             ripple.style.left = (x - offsets.left - size / 2) + 'px';
             ripple.style.top = (y - offsets.top - size / 2) + 'px';
 
-
             // Add animation effect
             angular.element(ripple).addClass('animate');
-
 
             // Remove animation when it's ends
             function stopAnimate(e) {
               angular.element(ripple).removeClass('animate');
-              console.log('animation done.');
             }
 
             // This remove the animation anyway the event propagation was faster.
             $timeout(function(){
               stopAnimate();
-              console.log('timeout.');
             }, 500, false);
-
 
           };
 
