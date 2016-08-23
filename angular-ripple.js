@@ -31,6 +31,7 @@
 
               // Register function to stop animation when the effect is done.
               ripple.addEventListener('animationend', stopAnimate, false);
+              ripple.addEventListener('webkitAnimationEnd', stopAnimate, false);
 
               // Prepend ripple to element
               this.insertBefore(ripple, this.firstChild);
