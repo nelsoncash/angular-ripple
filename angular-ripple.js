@@ -14,7 +14,7 @@
 
   var rip = angular.module('angularRipple', []);
 
-  rip.directive('angularRipple', function() {
+  rip.directive('angularRipple', function($timeout) {
     return {
       restrict: 'A',
       link: function (scope, element, attrs) {
@@ -22,25 +22,27 @@
           func = function(e){
             var ripple = this.querySelector('.angular-ripple');
             var eventType = e.type;
+            var elem = this;
             // Ripple
             if (ripple === null) {
               // Create ripple
               ripple = document.createElement('span');
-              ripple.className += ' angular-ripple';
+              ripple.setAttribute('class', 'angular-ripple');
+
+              // Register function to stop animation when the effect is done.
+              ripple.addEventListener('animationend', stopAnimate, false);
+              ripple.addEventListener('webkitAnimationEnd', stopAnimate, false);
 
               // Prepend ripple to element
               this.insertBefore(ripple, this.firstChild);
 
               // Set ripple size
               if (!ripple.offsetHeight && !ripple.offsetWidth) {
-                size = Math.max(element[0].offsetWidth, element[0].offsetHeight);
+                size = Math.max(this.offsetWidth, this.offsetHeight);
                 ripple.style.width = size + 'px';
                 ripple.style.height = size + 'px';
               }
             }
-
-            // Remove animation effect
-            ripple.className = ripple.className.replace(/ ?(animate)/g, '');
 
             // get click coordinates by event type
             if (eventType === 'mousedown') {
@@ -74,13 +76,24 @@
               return { top: top, left: left };
             }
 
-            offsets = getPos(element[0]);
+            offsets = getPos(this);
             ripple.style.left = (x - offsets.left - size / 2) + 'px';
             ripple.style.top = (y - offsets.top - size / 2) + 'px';
 
             // Add animation effect
-            ripple.className += ' animate';
-          }
+            angular.element(ripple).addClass('animate');
+
+            // Remove animation when it's ends
+            function stopAnimate(e) {
+              angular.element(ripple).removeClass('animate');
+            }
+
+            // This remove the animation anyway the event propagation was faster.
+            $timeout(function(){
+              stopAnimate();
+            }, 500, false);
+
+          };
 
         var eventType = ('ontouchstart' in document) ? 'touchstart' : 'mousedown';
         element.on(eventType, func);
